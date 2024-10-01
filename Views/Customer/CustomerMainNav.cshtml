@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "CustomerMainNav";
+}
+<style>
+    /* Main text style */
+    .MainText2 {
+        text-align: center;
+        color: black;
+        font-size: 100px; /* Adjusted font size for better fit */
+        font-family: "Bodoni MT", serif;
+        margin: 10px 0; /* 10px above the buttons */
+    }
+
+    /* Button container style */
+    .buttonContainer {
+        text-align: center; /* Center the buttons */
+        margin: 30px 0; /* 10px below the main text */
+    }
+
+    /* Button style */
+    .button {
+        background-color: black; /* Black background */
+        color: white; /* White text */
+        border: none; /* No border */
+        padding: 10px 20px; /* Padding for buttons */
+        margin: 0 10px; /* Horizontal spacing between buttons */
+        font-size: 40px; /* Font size */
+        cursor: pointer; /* Pointer on hover */
+        border-radius: 5px; /* Rounded edges */
+        text-decoration: none; /* Remove text underline */
+    }
+
+        /* Button hover effect */
+        .button:hover {
+            background-color: #333; /* Darker shade on hover */
+        }
+</style>
+
+<div class="MainText2">What would you like to do to the customer profiles?</div>
+
+<div class="buttonContainer">
+    @Html.ActionLink("Add", "AddCustomer", "Customer", null, new { @class = "button" })
+    @Html.ActionLink("View", "ViewAllCustomerProfiles", "Customer", null, new { @class = "button" })
+    @Html.ActionLink("Back", "Index", "Home", null, new { @class = "button" })
+</div>
+
+

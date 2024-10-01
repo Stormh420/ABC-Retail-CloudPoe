@@ -1,0 +1,22 @@
+﻿@model ABC_Retail_CloudPoe.Models.Order
+
+<h2>Payment Method</h2>
+
+<p>Order ID: @Model.Id</p>
+<p>Total Amount: @Model.TotalAmount</p>
+
+<form asp-action="SavePaymentMethod" method="post">
+    <input type="hidden" name="orderId" value="@Model.Id" />
+    <div>
+        <label>Payment Method:</label>
+        <select name="paymentMethod">
+            <option value="Cash">Cash</option>
+            <option value="Card">Card</option>
+        </select>
+    </div>
+
+    <button type="submit">Submit Payment</button>
+</form>
+
+<button onclick="history.back()">Back</button>
+

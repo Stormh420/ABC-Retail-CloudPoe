@@ -1,0 +1,24 @@
+﻿@model ABC_Retail_CloudPoe.Models.Order
+
+<h2>Add Order</h2>
+
+<form asp-action="AddOrder" method="post">
+    <div>
+        <label>Customer:</label>
+        <select asp-for="CustomerId" asp-items="@(new SelectList(ViewBag.Customers))"></select>
+    </div>
+
+    <div>
+        <label>Products:</label>
+        @foreach (var product in ViewBag.Products)
+        {
+            <div>
+                <input type="checkbox" name="ProductIds" value="@product.Id" /> @product.Name - @product.Price
+            </div>
+        }
+    </div>
+
+    <button type="submit">Add Order</button>
+</form>
+
+<button onclick="history.back()">Back</button>

@@ -1,0 +1,29 @@
+﻿@model List<CustomerProfile>
+
+<h2>All Customers</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
+                <td>
+                    <a asp-action="ViewCustomer" asp-route-id="@customer.Id">View/Edit</a> |
+                    <a asp-action="DeleteCustomer" asp-route-id="@customer.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button onclick="history.back()">Back</button>

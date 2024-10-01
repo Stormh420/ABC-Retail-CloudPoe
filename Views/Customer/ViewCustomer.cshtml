@@ -1,0 +1,25 @@
+﻿@model CustomerProfile
+
+<h2>Customer Profile</h2>
+
+<!-- Display the customer profile details with editable fields -->
+<form asp-action="UpdateCustomer" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label>ID:</label>
+        <span>@Model.Id</span>
+    </div>
+    <div>
+        <label>Name:</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <button type="submit">Save Changes</button>
+    </div>
+</form>
+
+<button onclick="history.back()">Back</button>

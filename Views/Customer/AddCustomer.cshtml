@@ -1,0 +1,18 @@
+﻿@model CustomerProfile
+
+<h2>Add Customer</h2>
+<form asp-action="AddCustomer" method="post">
+    <div>
+        <label>Name:</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <button type="submit">Add</button>
+    </div>
+</form>
+
+<button onclick="history.back()">Back</button>

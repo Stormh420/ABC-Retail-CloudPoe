@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ABC_Retail_CloudPoe.Models.Product>
+
+<h2>All Products</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td><img src="@product.ImageUrl" alt="Product Image" width="100" /></td>
+                <td>
+                    <a asp-action="ViewProduct" asp-route-id="@product.Id">View</a> |
+                    <a asp-action="DeleteProduct" asp-route-id="@product.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button onclick="history.back()">Back</button>
+

@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "OrderMainNav";
+}
+<style>
+    /* Main text style */
+    .MainText2 {
+        text-align: center;
+        color: black;
+        font-size: 100px;
+        font-family: "Bodoni MT", serif;
+        margin: 10px 0;
+    }
+
+    .buttonContainer {
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .button {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 40px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+        .button:hover {
+            background-color: #333;
+        }
+</style>
+
+<div class="MainText2">What would you like to do with the Orders?</div>
+
+<div class="buttonContainer">
+    @Html.ActionLink("Add Order", "AddOrder", "Order", null, new { @class = "button" })
+    @Html.ActionLink("View All Orders", "ViewAllOrders", "Order", null, new { @class = "button" })
+    @Html.ActionLink("Back", "Index", "Home", null, new { @class = "button" })
+</div>
+

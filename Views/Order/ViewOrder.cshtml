@@ -1,0 +1,28 @@
+﻿@model ABC_Retail_CloudPoe.Models.Order
+
+<h2>Order Details</h2>
+
+<p>Order ID: @Model.Id</p>
+<p>Customer ID: @Model.CustomerId</p>
+<p>Total Amount: @Model.TotalAmount</p>
+<p>Payment Method: @Model.PaymentMethod</p>
+
+<form asp-action="EditOrder" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label>Customer ID:</label>
+        <input asp-for="CustomerId" />
+    </div>
+    <div>
+        <label>Product IDs:</label>
+        <input asp-for="ProductIds" />
+    </div>
+    <button type="submit">Edit Order</button>
+</form>
+
+<form asp-action="DeleteOrder" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit">Delete Order</button>
+</form>
+
+<button onclick="history.back()">Back</button>

@@ -1,0 +1,27 @@
+﻿@model ABC_Retail_CloudPoe.Models.Product
+
+<h2>Add Product</h2>
+
+<form asp-action="AddProducts" method="post">
+    <div>
+        <label>Name:</label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label>Price:</label>
+        <input asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+    </div>
+    <div>
+        <label>Image URL:</label>
+        <input asp-for="ImageUrl" />
+        <span asp-validation-for="ImageUrl"></span>
+    </div>
+    <div>
+        <button type="submit">Add Product</button>
+    </div>
+</form>
+
+<button onclick="history.back()">Back</button>
+

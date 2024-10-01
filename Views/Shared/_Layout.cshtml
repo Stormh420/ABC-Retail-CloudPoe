@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ABC_Retail</title>
+
+    <style>
+        .content {
+            margin-top: 10px; /* Space from the navbar */
+            text-align:center;
+        }
+        /* Main background style */
+        .MainBackground {
+            background-image: url('/images/Home.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh; /* Ensures the height covers the viewport */
+            display: flex;
+            flex-direction: column; /* Aligns children vertically */
+            justify-content: space-between; /* Space between the main content and footer */
+        }
+
+        /* Navigation container style */
+        .nav-containor {
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1px;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        /* Header style */
+        h1 {
+            font-size: 40px;
+            margin-left: 100px;
+            margin-right: 500px; /* Adds more space between h1 and the first nav item */
+        }
+
+        /* Navigation link style */
+        .nav-containor a {
+            margin: 0 30px; /* Even spacing between nav items */
+            text-decoration: none;
+            font-size: 30px;
+            font-family: "Bodoni MT", serif; /* Use Bodoni MT font */
+            color: #000;
+        }
+
+        /* Footer style */
+        .footer {
+            text-align: center;
+            font-size: 25px;
+            margin: 0; /* Remove margin to prevent extra space */
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px; /* Padding for better appearance */
+            border-radius: 20px;
+            display: inline-block; /* Makes the footer only as wide as its content */
+            position: fixed; /* Fixes the footer at a specific position */
+            bottom: 10px; /* Places it 10px above the bottom of the viewport */
+            left: 50%; /* Centers it horizontally */
+            transform: translateX(-50%); /* Corrects the horizontal centering */
+        }
+
+    </style>
+</head>
+
+<body class="MainBackground">
+    <div class="nav-containor">
+        <h1>ABC Retail</h1>
+        <a asp-controller="Home" asp-action="CustomerMainNav">Customer</a>
+        <a asp-controller="Home" asp-action="ProductMainNav">Product</a>
+        <a asp-controller="Home" asp-action="OrderMainNav">Orders</a>
+    </div>
+    <div class="content">
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div>
+            &copy; 2024 - ABC_Retail
+        </div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+
+
+
